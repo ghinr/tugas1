@@ -1,0 +1,30 @@
+//Ghina Rahma Rukhayah
+//227064516084
+package smt2;
+import java.util.Scanner;
+public class uas1 {
+public static void main(String[] args) {
+    // buat scanner
+    Scanner input = new Scanner(System.in);
+    // menampilkan kalimat "jumlah data = "
+    System.out.print("jumlah data = ");
+    // mengambil masukan
+    int data = input.nextInt();
+    
+    if (data<1){
+     //jika data kurang dari 0 maka outputnya "Masukan salah"
+        System.out.println("Masukan salah");
+    }
+    else {
+    // membuat array untuk menampung data yang diulang
+        String[] nama = new String[data];
+     //jika tidak<1 maka akan ada perulangan
+    for( int i = 0; i < data; i++ ){
+        //untuk i=0 dan i < data maka i akan bertambah dan memberi output "Nama = "
+        System.out.print("Nama = ");
+        //ini untuk menampung masukan 
+        nama[i] =input.next();   
+} 
+}
+}
+}
