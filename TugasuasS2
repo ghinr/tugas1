@@ -1,0 +1,78 @@
+//Ghina Rahma Rukhayah - 227064516084
+
+package tugasuas;
+class Karyawan{
+    String NIP, nama, jenisKelamin;
+    int jumlahHari, totalGaji;
+    
+    void karyawan(String NIP, String nama, String jenisKelamin){
+        System.out.println("NIP : " +NIP);
+        System.out.println("Nama : " +nama );
+        System.out.println("Jenis Kelamin : " +jenisKelamin);
+    }
+    
+    void absenKerja(){    
+        System.out.println("Absen : " + jumlahHari );
+    }
+    
+    void hitungGaji(){
+        System.out.println("Hitung Gaji : "+ totalGaji);
+    }
+    
+    void hitungGaji(int jumlah_hari){
+        totalGaji=jumlah_hari*50000;
+        System.out.println("Hitung Gaji : "+ totalGaji);
+    }
+}
+class Dosen extends Karyawan {
+    String golongan;
+    int jumlah_sks;
+    int upah_per_sks;
+    
+    @Override
+    void hitungGaji(){   
+    int totalGaji=upah_per_sks*jumlah_sks*jumlahHari;
+    System.out.println("Hitung Gaji : "+ totalGaji);
+    }
+}
+
+class Staff extends Karyawan {
+}
+public class tugasUas {
+    public static void main(String[] args) {
+    Karyawan satu=new Karyawan();
+    satu.karyawan("12345", "Ghina", "Perempuan");
+    satu.jumlahHari=5;
+    satu.absenKerja();
+    satu.hitungGaji(25);
+
+    System.out.println();
+    
+    Dosen dua=new Dosen();
+    dua.karyawan("13579", "Rahma", "Laki laki");
+    dua.golongan="I";
+    System.out.println("Golongan : " + dua.golongan);
+    dua.jumlahHari=2;
+    dua.absenKerja();
+    dua.jumlah_sks=10;
+    dua.upah_per_sks=10000;
+    dua.jumlahHari=28;
+    dua.hitungGaji();   
+
+    System.out.println();
+    
+    Staff tiga=new Staff();
+    tiga.karyawan("02468", "Rukhayah", "Perempuan");
+    tiga.absenKerja();
+    tiga.totalGaji=1000000;
+    tiga.hitungGaji();    
+
+    System.out.println();
+    
+    Staff empat=new Staff();
+    empat.karyawan("53179", "Gigi", "Laki laki");
+    empat.jumlahHari=1;
+    empat.absenKerja();
+    empat.hitungGaji(29);    
+    }    
+}
